@@ -1,0 +1,90 @@
+*{
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+.game{
+    width: 500px;
+    height: 220px;
+    border: 1px solid black;
+    margin: auto;
+}
+#character{
+    width: 60px;
+    height: 60px;
+    
+    position:relative;
+    top: 160px;
+}
+#merkel{
+background-color: aqua;
+}
+#boden{
+    background-color: greenyellow;
+    width: 500px;
+    height: 5px;
+    position:relative;
+    top: 90px;
+}
+
+.animate{
+    animation: jump 0.5s linear;
+    
+}
+.animatekauer{
+    animation: kauer 1.0s linear;
+}
+.animateslide{
+animation: slide 1.3s ease;
+}
+
+@keyframes jump{
+    0%{top: 150px;}
+    30%{top: 100px;}
+    70%{top: 100px;}
+    100%{top: 150px;}
+}
+@keyframes keauer{
+    0%{height: 60px;}
+    22%{height: 30px;}
+    82%{height: 30px;}
+    100%{height: 60px;}
+}
+
+@keyframes slide{
+    0%{left: 0px;}
+    30%{left: 50px;}
+    70%{left: 20px;}
+    100%{left: 0px;}
+}
+
+#block{
+    background-color: blue;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 110px;
+    left: 500px;
+    
+}
+
+@keyframes block{
+    0%{left: 500px}
+    100%{left: -20px}
+}
+#clock{
+    background-color: blue;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 60px;
+    left: 500px;
+
+}
+@keyframes clock{
+    0%{left: 500px}
+    100%{left: -20px}
+}
+p{
+    text-align: center;
+}
