@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 .game{
     width: 500px;
@@ -9,26 +10,34 @@
     border: 1px solid black;
     margin: auto;
 }
+#buttons{
+    top:10px;
+    left: 300px;
+}
 #character{
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 70px;
     
     position:relative;
-    top: 160px;
+    top: 120px;
 }
 #merkel{
-background-color: aqua;
+    
+
+
+width: 100%;
+height: 100%;
+overflow: hidden;
 }
 #boden{
     background-color: greenyellow;
     width: 500px;
     height: 5px;
-    position:relative;
-    top: 90px;
+    top: 50px;
 }
 
 .animate{
-    animation: jump 0.5s linear;
+    animation: jump 0.75s linear;
     
 }
 .animatekauer{
@@ -39,10 +48,10 @@ animation: slide 1.3s ease;
 }
 
 @keyframes jump{
-    0%{top: 150px;}
-    30%{top: 100px;}
-    70%{top: 100px;}
-    100%{top: 150px;}
+    0%{top: 120px;}
+    30%{top: 50px;}
+    70%{top: 50px;}
+    100%{top: 120px;}
 }
 @keyframes keauer{
     0%{height: 60px;}
@@ -57,27 +66,48 @@ animation: slide 1.3s ease;
     70%{left: 20px;}
     100%{left: 0px;}
 }
+#clock{
+   
+    width: 100px;
+    height: 50px;
+    position: relative;
+    top: 20px;
+    left: 500px;   
+}
 
 #block{
-    background-color: blue;
-    width: 20px;
-    height: 20px;
+
+    width: 50px;
+    height: 80px;
     position: relative;
-    top: 110px;
+    top: 20px;
     left: 500px;
     
 }
+#fly{
+    width:20px;
+    height:20px;
+    background-color: blueviolet;
+    position: relative;
+    top: 155px;
+    left: 500px;
+}
+#blockimg{
+    width:100%;
+    height:100%;
+    }
+
 
 @keyframes block{
     0%{left: 500px}
     100%{left: -20px}
 }
 #clock{
-    background-color: blue;
+
     width: 20px;
     height: 20px;
     position: relative;
-    top: 60px;
+    top: 20px;
     left: 500px;
 
 }

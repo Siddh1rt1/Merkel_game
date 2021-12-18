@@ -7,16 +7,26 @@
 </head>
 <body>
     <div class="game">
-        <div id="character">
+        <div id="fly">
+            Verantwortung
+        </div>    
+        <div id="character" >
             <img src="/Game_Data/Merkel_A.png" id="merkel">
 
         </div>
-        <button type="but_jump" onclick="jump()">jump</button>
-        <button type="but_kauer"onclick="kauer()">kauer</button> 
-        <button type="but_slide"onclick="slide()">slide</button>  
-        <button type="but_donot">donothing</button> 
-        <div id="block"></div>
+
+        <div id=buttons>
+            <button type="but_jump" onclick="jump()">jump</button>
+            <button type="but_kauer"onclick="kauer()">kauer</button> 
+            <button type="but_slide"onclick="slide()">slide</button>  
+            <button type="but_donot" onclick="spawnblock()">donothing</button> 
+           
+        </div>
+         <div id="block">
+            <img src="/Game_Data/Block_1.png" id="blockimg">
+        </div>
         <div id="clock"></div>
+
         <div id="boden"></div>
     </div>
     <p>Score: <span id="scoreSpan"></span></p>
