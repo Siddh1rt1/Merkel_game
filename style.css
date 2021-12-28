@@ -1,89 +1,57 @@
 *{
     padding: 0;
     margin: 0;
+
     overflow-x: hidden;
     overflow-y: hidden;
+}
+#überschrift{
+    text-align: center;
 }
 .game{
     width: 500px;
     height: 220px;
     border: 1px solid black;
-    margin: auto;
+    margin: auto;  
+
+    fill:aquamarine;
+    position:relative;
+    overflow: hidden;
 }
-#buttons{
-    top:10px;
-    left: 300px;
-}
+
 #character{
     width: 40px;
     height: 70px;
-    
     position:relative;
     top: 120px;
+    z-index: 1;
+
 }
 #merkel{
-    
-
-
-width: 100%;
-height: 100%;
-overflow: hidden;
-}
-#boden{
-    background-color: greenyellow;
-    width: 500px;
-    height: 5px;
-    top: 50px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
 }
 
-.animate{
-    animation: jump 0.75s linear;
-    
-}
-.animatekauer{
-    animation: kauer 1.0s linear;
-}
-.animateslide{
-animation: slide 1.3s ease;
-}
 
-@keyframes jump{
-    0%{top: 120px;}
-    30%{top: 50px;}
-    70%{top: 50px;}
-    100%{top: 120px;}
-}
-@keyframes keauer{
-    0%{height: 60px;}
-    22%{height: 30px;}
-    82%{height: 30px;}
-    100%{height: 60px;}
-}
-
-@keyframes slide{
-    0%{left: 0px;}
-    30%{left: 50px;}
-    70%{left: 20px;}
-    100%{left: 0px;}
-}
-#clock{
-   
-    width: 100px;
-    height: 50px;
-    position: relative;
-    top: 20px;
-    left: 500px;   
-}
 
 #block{
-
     width: 50px;
     height: 80px;
     position: relative;
     top: 20px;
     left: 500px;
-    
 }
+
+#block2{
+    width: 50px;
+    height: 80px;
+    position: relative;
+    top: 20px;
+    left: 500px;
+}
+
 #fly{
     width:20px;
     height:20px;
@@ -92,29 +60,110 @@ animation: slide 1.3s ease;
     top: 155px;
     left: 500px;
 }
+#imgfly{
+    height:30px;
+    width:30px;
+}
 #blockimg{
     width:100%;
     height:100%;
-    }
-
-
-@keyframes block{
-    0%{left: 500px}
-    100%{left: -20px}
 }
-#clock{
 
-    width: 20px;
-    height: 20px;
-    position: relative;
+#picture{
+    height:100px;
+    width:100px;
+}
+#wolke_1{
+    width: 70px;
+    height: 50px;
+    position:absolute;
     top: 20px;
-    left: 500px;
+
 
 }
-@keyframes clock{
-    0%{left: 500px}
-    100%{left: -20px}
+
+#wolke_2{
+    width: 70px;
+    height: 50px;
+    position:absolute;
+    top: 20px;
+    animation: wolkig 5s linear infinite;
+
 }
+#himmel_background{
+    width: 600%;
+    height:250px;
+    left:0px;
+    top:-25px;
+    position: absolute;
+    animation: move 60s linear;
+}
+#himmel{
+    width: 600%;
+    height:250px;
+    left:0px;
+    top:-25px;
+    position: absolute;
+    animation: move 100s linear;
+}
+
+#buttons{
+    top:10px;
+    left: 300px;
+}
+
+#boden{
+    width: 600%;
+    height:250px;
+    left:0px;
+    top:-25px;
+    position: absolute;
+    animation: move 25s linear;
+}
+
+
+@keyframes move{
+    0%{left: 0px}
+    100%{left: -2500px}
+}
+
 p{
     text-align: center;
 }
+
+.animate{
+    animation: jump 1.2s ease;  
+}
+
+.animatekauer{
+    animation: kauer 1.0s linear;
+}
+
+.animateslide{
+    animation: slide 1.3s ease;
+}
+
+@keyframes jump{
+    0%{top: 120px;}
+    45%{top: 50px;}
+    65%{top: 60px;}
+    100%{top: 120px;}
+}
+
+@keyframes slide{
+    0%{left: 0px;}
+    30%{left: 50px;}
+    70%{left: 20px;}
+    100%{left: 0px;}
+}
+
+@keyframes block{
+    0%{left: 550px}
+    100%{left: -50px}
+}
+@keyframes wolkig{
+    0%{left: 750px}
+    100%{left: -150px}
+}
+
+

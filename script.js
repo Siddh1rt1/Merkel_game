@@ -1,3 +1,4 @@
+
 var character = document.getElementById("character");
 var block = document.getElementById("block");
 var counter=0;
@@ -7,6 +8,8 @@ var modus=0;
 var loose=0;
 var timeomat=1000;
 var checkblock=0;
+var carnumber=0;
+randompercent=75;
 
 function jump(){
     if(character.classList == "animate"){return}
@@ -15,7 +18,7 @@ function jump(){
     setTimeout(function(){
         character.classList.remove("animate");
         
-    },600);
+    },2000);
 }
 
 function kauer(){
@@ -42,33 +45,45 @@ function slide(){
     },600);
 }
 
+var spawnblock = setInterval(function(){
+    wolke_1.style.animation = "";
+    console.log(wolke_1.style.animation);
+    randompercent;
+    console.log(randompercent);
+    wolke_1.style.height = 50*randompercent/100;
+    wolke_1.style.width = 50*randompercent/100;
+    dauer=2*randompercent/100;
+    wolke_1.style.animation = "wolkig normal "+dauer+"s linear infinite";
+    console.log(wolke_1.style.animation);
+
+    randompercent= Math.round(Math.random()*(100-75)+75);
+},2000) 
+
 var spawn = setInterval(function() {
+    if (blocknumber=1)
     ticker=Math.random();
-    timeomat=Math.floor(Math.random()*1000+800)/1000;
-    console.log(timeomat);
-  
 
     if (ticker>0.5){
         fly.style.animation = "";
-        console.log("blockbeginn");
-        block.style.animation = "block "+timeomat+"s  linear";
+        block.style.animation = "block 1s linear";
     }
     else{ 
         block.style.animation ="";
-        console.log("flybeginn");
-        fly.style.animation = "block "+timeomat+"s  linear";}
+        fly.style.animation = "block 1s linear";}
 
-},2000);
+},1000);
 
 
 var changeblock = setInterval(function(){
     if (checkwalk!=1){
         checkwalk=1
         document.getElementById("blockimg").src="Game_Data/Block_1.png";
+        document.getElementById("blockimg2").src="Game_Data/Block_1.png";
     }
     else{
         checkwalk=0;
         document.getElementById("blockimg").src="Game_Data/Block_2.png";}
+        document.getElementById("blockimg2").src="Game_Data/Block_2.png";
     },400)
 
 
@@ -140,7 +155,6 @@ var walka = setInterval(function() {
             document.getElementById("merkel").src="Game_Data/Merkel_B.png";}
     }}, 180);
 
-    
 
 
 
