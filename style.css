@@ -39,8 +39,8 @@
 #block{
     width: 50px;
     height: 80px;
-    position: relative;
-    top: 20px;
+    position: absolute;
+    top: 110px;
     left: 500px;
 }
 
@@ -48,7 +48,7 @@
     width: 50px;
     height: 80px;
     position: relative;
-    top: 20px;
+    top: 135px;
     left: 500px;
 }
 
@@ -56,9 +56,10 @@
     width:20px;
     height:20px;
     background-color: blueviolet;
-    position: relative;
-    top: 155px;
-    left: 500px;
+    position: absolute;
+    top: 135px;
+    left: -50px;
+
 }
 #imgfly{
     height:30px;
@@ -77,9 +78,8 @@
     width: 70px;
     height: 50px;
     position:absolute;
-    top: 20px;
-
-
+    top: 5px;
+    animation: wolkig 7.2s linear infinite;
 }
 
 #wolke_2{
@@ -96,7 +96,7 @@
     left:0px;
     top:-25px;
     position: absolute;
-    animation: move 60s linear;
+    animation: move 60s linear infinite;
 }
 #himmel{
     width: 600%;
@@ -104,7 +104,7 @@
     left:0px;
     top:-25px;
     position: absolute;
-    animation: move 100s linear;
+    animation: move 100s linear infinite;
 }
 
 #buttons{
@@ -118,7 +118,7 @@
     left:0px;
     top:-25px;
     position: absolute;
-    animation: move 25s linear;
+    animation: move 25s linear infinite;
 }
 
 
@@ -152,8 +152,8 @@ p{
 
 @keyframes slide{
     0%{left: 0px;}
-    30%{left: 50px;}
-    70%{left: 20px;}
+    30%{left: 150px;}
+    70%{left: 50px;}
     100%{left: 0px;}
 }
 

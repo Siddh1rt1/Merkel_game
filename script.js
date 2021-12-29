@@ -12,13 +12,14 @@ var carnumber=0;
 randompercent=75;
 
 function jump(){
-    if(character.classList == "animate"){return}
-    character.classList.add("animate");
+    if (character.style.animation.includes('jump')) {
+        console.log("hello");
+    }
+    character.style.animation += "jump 1s";
     console.log("jump");
     setTimeout(function(){
-        character.classList.remove("animate");
-        
-    },2000);
+        character.style.animation = character.style.animation.replace("1s ease 0s 1 normal none running jump", "");
+    },1200);
 }
 
 function kauer(){
@@ -29,35 +30,29 @@ function kauer(){
     console.log("kauer");
     setTimeout(function(){
         character.classList.remove("animatekauer");
-        
-    },600);
+        console.log("kauer2");
+    },800);
 }
 
 function slide(){
-    if(character.classList == "animateslide"){return}
+    console.log("slid2e");
+    if(character.style.animation == "slide 1s linear"){return}
+    console.log("slideafter");
     document.getElementById("merkel").src="Game_Data/Merkel_slide_A.png";
+    console.log("slideafter2");
+    if (character.style.animation=="jump"){
+        character.style.animation += ", slide 1s linear";}
+    character.style.animation += "slide 1s linear";
 
-    character.classList.add("animateslide");
     console.log("slide");
     setTimeout(function(){
-        character.classList.remove("animateslide");
+        console.log("slide");
+         character.style.animation = character.style.animation.replace("1s linear 0s 1 normal none running slide", "");
         
-    },600);
+    },2000);
 }
 
-var spawnblock = setInterval(function(){
-    wolke_1.style.animation = "";
-    console.log(wolke_1.style.animation);
-    randompercent;
-    console.log(randompercent);
-    wolke_1.style.height = 50*randompercent/100;
-    wolke_1.style.width = 50*randompercent/100;
-    dauer=2*randompercent/100;
-    wolke_1.style.animation = "wolkig normal "+dauer+"s linear infinite";
-    console.log(wolke_1.style.animation);
 
-    randompercent= Math.round(Math.random()*(100-75)+75);
-},2000) 
 
 var spawn = setInterval(function() {
     if (blocknumber=1)
@@ -122,6 +117,45 @@ var checkDead = setInterval(function() {
 }, 100);
 
 
+
+let last = 0;
+let num = 0;
+let speed = 0.25;
+var walksetter=0;
+function main(timeStamp) {
+  let timeInSecond = timeStamp / 1000;
+
+  if (timeInSecond - last >= speed) {
+    last = timeInSecond;
+    console.log(++num);
+    console.log("log_main");
+    if (walksetter==0){
+    document.getElementById("merkel").src="Game_Data/Merkel_A.png";
+    console.log("merkel_a");
+    walksetter=1;}
+    else{document.getElementById("merkel").src="Game_Data/Merkel_B.png";
+    console.log("merkel_b");
+    walksetter=0;}
+  }
+
+  requestAnimationFrame(main);
+}
+
+main();
+
+
+
+function setwalkanimation(){
+    console.log("start");
+    if (checkwalk!=1){
+        checkwalk=1;
+      
+        document.getElementById("merkel").src="Game_Data/Merkel_A.png";
+    }
+    else{
+        checkwalk=0;
+        document.getElementById("merkel").src="Game_Data/Merkel_B.png";} ;
+}
 var walka = setInterval(function() {
     if(character.classList == "animateslide"){
         if (checkwalk!=1){
@@ -146,13 +180,7 @@ var walka = setInterval(function() {
 
     }
     else{
-        if (checkwalk!=1){
-            checkwalk=1
-            document.getElementById("merkel").src="Game_Data/Merkel_A.png";
-        }
-        else{
-            checkwalk=0;
-            document.getElementById("merkel").src="Game_Data/Merkel_B.png";}
+
     }}, 180);
 
 
